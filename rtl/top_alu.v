@@ -7,26 +7,25 @@ module top_alu
     input  wire                           clk      ,
     input  wire         [2           : 0] i_btn    ,
     input  wire signed  [NB_DATA - 1 : 0] i_sw_data,
-    output wire signed  [NB_DATA - 1 : 0] o_result      // Resultado
+    output wire signed  [NB_DATA - 1 : 0] o_led      // Resultado
 );
 
     reg [NB_DATA - 1 : 0] data_a; // preguntar esto al feli
     reg [NB_DATA - 1 : 0] data_b;
     reg [NB_OP   - 1 : 0] op    ;
-
   
     // Instanciación de la ALU
     ALU #(
         .NB_DATA(NB_DATA),
         .NB_OP  (NB_OP  )
     ) alu_instance (
-        .i_data_a(data_a  ),
-        .i_data_b(data_b  ),
-        .i_op    (op      ),
-        .o_result(o_result)
+        .i_data_a(data_a),
+        .i_data_b(data_b),
+        .i_op    (op    ),
+        .o_result(o_led )
     );
 
-    always(posedge clk) begin
+    always@(posedge clk) begin
         
         if(i_btn[0])begin
             data_a <= i_sw_data;
@@ -41,5 +40,5 @@ module top_alu
         end
 
     end
-
+ 
 endmodule
