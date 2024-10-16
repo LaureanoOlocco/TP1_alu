@@ -33,15 +33,15 @@ always @(*)
 begin
             
     case (i_op)
-        6'b100000: result <= i_data_a +   i_data_b ; // Operación ADD
-        6'b100010: result <= i_data_a -   i_data_b ; // Operación SUB
-        6'b100100: result <= i_data_a &   i_data_b ; // Operación AND
-        6'b100101: result <= i_data_a |   i_data_b ; // Operación OR
-        6'b100110: result <= i_data_a ^   i_data_b ; // Operación XORi_op
-        6'b000011: result <= i_data_a >>> i_data_b ; // Operación SRA
-        6'b000010: result <= i_data_a >>  i_data_b ; // Operación SRL
-        6'b100111: result <= ~(i_data_a | i_data_b); // Operación NOR
-        default:   result <= {NB_DATA{1'b0}}       ; // Sino, todo 0
+        6'b100000: result = i_data_a +   i_data_b ; // Operación ADD
+        6'b100010: result = i_data_a -   i_data_b ; // Operación SUB
+        6'b100100: result = i_data_a &   i_data_b ; // Operación AND
+        6'b100101: result = i_data_a |   i_data_b ; // Operación OR
+        6'b100110: result = i_data_a ^   i_data_b ; // Operación XORi_op
+        6'b000011: result = i_data_a >>> i_data_b ; // Operación SRA
+        6'b000010: result = i_data_a >>  i_data_b ; // Operación SRL
+        6'b100111: result = ~(i_data_a | i_data_b); // Operación NOR
+        default:   result = {NB_DATA{1'b0}}       ; // Sino, todo 0
             
     endcase
 

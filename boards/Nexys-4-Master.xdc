@@ -56,8 +56,8 @@ set_property PACKAGE_PIN V5 [get_ports {i_sw_data[7]}]
 #set_property PACKAGE_PIN P3 [get_ports {sw[14]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[14]}]
 ##Bank = 34, Pin name = IO_L14P_T2_SRCC_34,					Sch name = SW15
-#set_property PACKAGE_PIN P4 [get_ports {i_valid}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {i_valid}]
+set_property PACKAGE_PIN P4 [get_ports {i_valid}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {i_valid}]
  
 
 
@@ -200,8 +200,8 @@ set_property PACKAGE_PIN F15 [get_ports i_btn[1]]
 #set_property PACKAGE_PIN T16 [get_ports i_rst]						
 	#set_property IOSTANDARD LVCMOS33 [get_ports i_rst]
 ##Bank = 14, Pin name = IO_25_14,							Sch name = BTNR
-#set_property PACKAGE_PIN R10 [get_ports btnR]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnR]
+set_property PACKAGE_PIN R10 [get_ports i_rst]						
+	set_property IOSTANDARD LVCMOS33 [get_ports i_rst]
 ##Bank = 14, Pin name = IO_L21P_T3_DQS_14,					Sch name = BTND
 set_property PACKAGE_PIN V10 [get_ports i_btn[2]]						
 	set_property IOSTANDARD LVCMOS33 [get_ports i_btn[2]]
